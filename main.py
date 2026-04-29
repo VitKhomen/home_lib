@@ -10,8 +10,6 @@ from models.books import BookModel
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all, checkfirst=True)
 
     print("Database is ready")
 
